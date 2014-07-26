@@ -6,7 +6,7 @@ When a variable name starts with a "t", it denotes a variable in the time domain
 
 The following are the column names (headers) in tidy_data_set.txt:
 
-[1]  subject
+[1]  subject\\
 [2]  ActivityLabel
 [3]  tBodyAccMeanX
 [4]  tBodyAccMeanY
