@@ -105,4 +105,4 @@ colnames(q3) <- gsub("-","",colnames(q3))         #remove minus signs
 colnames(q3) <- gsub("mean","Mean",colnames(q3))  #Improve readabiity by changing "mean" to "Mean"
 colnames(q3) <- gsub("std","Std",colnames(q3))    #Improve readabiity by changing "std" to "Std"
 
-write.table(q3, "tidy_data_set.txt", sep="\t", row.names=FALSE)
+write.table(q3, "tidy_data_set.txt", sep="\t", row.names=FALSE, quote=FALSE)
