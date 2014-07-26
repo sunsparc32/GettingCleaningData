@@ -71,7 +71,7 @@ c(grep("_",colnames(data_set2)), grep("\\.",colnames(data_set2)), grep(" ",colna
 # Verify that there are no duplicates in column names:
 length(unique(colnames(data_set2)))==length(colnames(data_set2)) #should be TRUE
 
-#With respect, I will disagree with the strict use of lowe case only variables only
+#With respect, I will disagree with the strict use of lower case only variables only
 #as espoused by the instructors. Here, having a mix of upper and lower case names
 #is quite useful. E.g., having names like "ActivityLabel" makes reading it a lot
 #easier
@@ -98,4 +98,11 @@ for (i in 1:length(sindex)){
      }
 
 q3 <- q1[2:181,] #Remove the first row, which really was a place holder
-write.table(q3, "tidy_data_set.txt", sep="\t", row.names=FALSE, quote=FALSE)
+
+#Last minute tidying up of the headers
+colnames(q3) <- gsub("\\(\\)","",colnames(q3))    #remove opening and closing parentheses
+colnames(q3) <- gsub("-","",colnames(q3))         #remove minus signs
+colnames(q3) <- gsub("mean","Mean",colnames(q3))  #Improve readabiity by changing "mean" to "Mean"
+colnames(q3) <- gsub("std","Std",colnames(q3))    #Improve readabiity by changing "std" to "Std"
+
+write.table(q3, "tidy_data_set.txt", sep="\t", row.names=FALSE)
